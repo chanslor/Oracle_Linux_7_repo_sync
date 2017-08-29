@@ -1,7 +1,7 @@
 Name:    ems-ol7-repo
 Summary: Oracle Linux 7 EMS repo
 Version: 1.0
-Release: 1
+Release: 2
 License: Southern Company, EMS
 Vendor:  Southern Company, EMS
 
@@ -43,3 +43,6 @@ cp %{SOURCE2} $RPM_BUILD_ROOT/usr/local/bin/
 
 
 %changelog
+* Tue Aug 29 2017 mdchansl@southernco.com
+- Added cron entry
+
