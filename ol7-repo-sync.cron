@@ -1,0 +1,3 @@
+#ol7 repo sync
+# @daily root /usr/local/bin/ol7-repo-sync.bash > /dev/null 2>&1
+0 3 * * * root /usr/local/bin/ol7-repo-sync.bash > /dev/null 2>&1
