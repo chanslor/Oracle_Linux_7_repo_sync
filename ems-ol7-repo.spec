@@ -6,7 +6,8 @@ License: Southern Company, EMS
 Vendor:  Southern Company, EMS
 
 Source0: OL7.repo
-Source1: uvscan.repo
+Source1: ol7-repo-sync.cron
+Source1: ol7-repo-sync.bash
 
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -25,20 +26,19 @@ Oracle Linux 7 EMS repo
 
 mkdir -p $RPM_BUILD_ROOT/etc/yum.repos.d/
 mkdir -p $RPM_BUILD_ROOT/etc/cron.d/
+mkdir -p $RPM_BUILD_ROOT/usr/local/bin/
 
-cp %{SOURCE0} $RPM_BUILD_ROOT/etc/sysconfig/uvscan
-cp %{SOURCE1} $RPM_BUILD_ROOT/etc/yum.repos.d/
+cp %{SOURCE0} $RPM_BUILD_ROOT/etc/yum.repos.d/
+cp %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/
+cp %{SOURCE2} $RPM_BUILD_ROOT/usr/local/bin/
 
 
 
 %files 
 %defattr(-,root,root) 
-%config(noreplace)/etc/sysconfig/uvscan
-%config(noreplace)/etc/yum.repos.d/uvscan.repo
-%config(noreplace)/usr/local/uvscan/exclude.list
-/etc/cron.d/uvscan-client.crontab
-/usr/local/uvscan/uvscan-client-update.bash
-/usr/local/uvscan/uvscan.bash
+/etc/yum.repos.d/OL7.repo
+/etc/cron.d/ol7-repo-sync.cron
+/usr/local/bin/ol7-repo-sync.bash
 
 
 
