@@ -7,7 +7,7 @@ Vendor:  Southern Company, EMS
 
 Source0: OL7.repo
 Source1: ol7-repo-sync.cron
-Source1: ol7-repo-sync.bash
+Source2: ol7-repo-sync.bash
 
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
