@@ -1,7 +1,7 @@
 Name:    ems-ol7-repo-sync
 Summary: Oracle Linux 7 EMS repo and sync
 Version: 1.0
-Release: 6
+Release: 7
 License: Southern Company, EMS
 Vendor:  Southern Company, EMS
 
@@ -43,6 +43,9 @@ cp %{SOURCE2} $RPM_BUILD_ROOT/usr/local/bin/
 
 
 %changelog
+* Wed Aug 30 2017 mdchansl@southernco.com - 1.0-7
+- Disable repo by default
+
 * Wed Aug 30 2017 mdchansl@southernco.com - 1.0-6
 - Made bash script executable
 
