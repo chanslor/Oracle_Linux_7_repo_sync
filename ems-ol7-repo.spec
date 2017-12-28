@@ -5,7 +5,7 @@ Release: 8
 License: Southern Company, EMS
 Vendor:  Southern Company, EMS
 
-Source0: OL7.repo
+Source0: public-yum-ol7.repo
 Source1: ol7-repo-sync.cron
 Source2: ol7-repo-sync.bash
 
@@ -36,7 +36,7 @@ cp %{SOURCE2} $RPM_BUILD_ROOT/usr/local/bin/
 
 %files 
 %defattr(-,root,root) 
-/etc/yum.repos.d/OL7.repo
+/etc/yum.repos.d/public-yum-ol7.repo
 /etc/cron.d/ol7-repo-sync.cron
 %attr(0755,root,root)/usr/local/bin/ol7-repo-sync.bash
 
