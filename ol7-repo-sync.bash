@@ -26,11 +26,11 @@ createrepo -v /repo/OL/ol7_UEKR4/ -g comps.xml >> /var/log/ol-repo-sync.UEKR4.cr
 
 #
 #This was obsoleted by --download-metadata --downloadcomps
-cd /repo/OL/ol7_UEKR4/getPackage/repodata/
-/usr/bin/wget -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/filelists.xml.gz
-/usr/bin/wget -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/other.xml.gz
-/usr/bin/wget -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/primary.xml.gz
-/usr/bin/wget -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/repomd.xml
-/usr/bin/wget -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/updateinfo.xml.gz
+cd /repo/OL/ol7_UEKR4/repodata/
+/usr/bin/wget -q -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/filelists.xml.gz
+/usr/bin/wget -q -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/other.xml.gz
+/usr/bin/wget -q -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/primary.xml.gz
+/usr/bin/wget -q -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/repomd.xml
+/usr/bin/wget -q -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/updateinfo.xml.gz
 
 
