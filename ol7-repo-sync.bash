@@ -24,6 +24,7 @@ cd /repo/OL/ol7_latest/repodata/
 cd /repo/OL/ol7_UEKR4
 createrepo -v /repo/OL/ol7_UEKR4/ -g comps.xml >> /var/log/ol-repo-sync.UEKR4.createrepo.log 2>&1
 
+#
 #This was obsoleted by --download-metadata --downloadcomps
 cd /repo/OL/ol7_UEKR4/getPackage/repodata/
 /usr/bin/wget -N http://yum.oracle.com/repo/OracleLinux/OL7/UEKR4/x86_64/repodata/filelists.xml.gz
