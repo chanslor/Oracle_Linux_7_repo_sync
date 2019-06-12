@@ -6,6 +6,9 @@
 
 # Wed Jun 12 13:33:41 CDT 2019 - Oracle changed the meta data in MAY 2019
 
+REPOSYNC=/usr/bin/reposync
+CREATEREPO=/usr/bin/createrepo
+
 exec 1> /var/log/ol-repo-sync.log 2>&1
 
 $REPOSYNC --download-metadata --downloadcomps -l -m -d -r ol7_latest -p /repo/OL/
@@ -19,9 +22,6 @@ if [ -d /repo/OL/ol7_latest ] ; then
 fi
 
 
-
-#Next, the UEK kernel
-
 $REPOSYNC --download-metadata --downloadcomps -l -m -d -r ol7_UEKR4 -p /repo/OL/
 $CREATEREPO --update -v /repo/OL/ol7_UEKR4
 
@@ -30,5 +30,15 @@ if [ -d /repo/OL/ol7_UEKR4 ] ; then
         gzip -d *-updateinfo.xml.gz
         mv *-updateinfo.xml updateinfo.xml
         modifyrepo /repo/OL/ol7_UEKR4/updateinfo.xml /repo/OL/ol7_UEKR4/repodata
+fi
+
+$REPOSYNC --download-metadata --downloadcomps -l -m -d -r ol7_UEKR5 -p /repo/OL/
+$CREATEREPO --update -v /repo/OL/ol7_UEKR5
+
+if [ -d /repo/OL/ol7_UEKR5 ] ; then
+        cd /repo/OL/ol7_UEKR5
+        gzip -d *-updateinfo.xml.gz
+        mv *-updateinfo.xml updateinfo.xml
+        modifyrepo /repo/OL/ol7_UEKR5/updateinfo.xml /repo/OL/ol7_UEKR5/repodata
 fi
 
