@@ -19,6 +19,9 @@ if [ -d /repo/OL/ol7_latest ] ; then
         gzip -d *-updateinfo.xml.gz
         mv *-updateinfo.xml updateinfo.xml
         modifyrepo /repo/OL/ol7_latest/updateinfo.xml /repo/OL/ol7_latest/repodata
+else
+	echo "Could NOT find /repo/OL/ol7_latest."
+	exit 1
 fi
 
 
@@ -30,6 +33,9 @@ if [ -d /repo/OL/ol7_UEKR4 ] ; then
         gzip -d *-updateinfo.xml.gz
         mv *-updateinfo.xml updateinfo.xml
         modifyrepo /repo/OL/ol7_UEKR4/updateinfo.xml /repo/OL/ol7_UEKR4/repodata
+else
+	echo "Could NOT find /repo/OL/ol7_UEKR4."
+	exit 1
 fi
 
 $REPOSYNC --download-metadata --downloadcomps -l -m -d -r ol7_UEKR5 -p /repo/OL/
@@ -40,5 +46,8 @@ if [ -d /repo/OL/ol7_UEKR5 ] ; then
         gzip -d *-updateinfo.xml.gz
         mv *-updateinfo.xml updateinfo.xml
         modifyrepo /repo/OL/ol7_UEKR5/updateinfo.xml /repo/OL/ol7_UEKR5/repodata
+else
+	echo "Could NOT find /repo/OL/ol7_UEKR5"
+	exit 1
 fi
 
