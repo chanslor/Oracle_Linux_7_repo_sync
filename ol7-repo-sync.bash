@@ -51,3 +51,29 @@ else
 	exit 1
 fi
 
+$REPOSYNC --download-metadata --downloadcomps -l -m -d -r ol7_optional_latest -p /repo/OL/
+$CREATEREPO --update -v /repo/OL/ol7_optional_latest
+
+if [ -d /repo/OL/ol7_optional_latest ] ; then
+        cd /repo/OL/ol7_optional_latest
+        gzip -d *-updateinfo.xml.gz
+        mv *-updateinfo.xml updateinfo.xml
+        modifyrepo /repo/OL/ol7_optional_latest/updateinfo.xml /repo/OL/ol7_optional_latest/repodata
+else
+	echo "Could NOT find /repo/OL/ol7_optional_latest"
+	exit 1
+fi
+
+$REPOSYNC --download-metadata --downloadcomps -l -m -d -r ol7_addons -p /repo/OL/
+$CREATEREPO --update -v /repo/OL/ol7_addons
+
+if [ -d /repo/OL/ol7_addons ] ; then
+        cd /repo/OL/ol7_addons
+        gzip -d *-updateinfo.xml.gz
+        mv *-updateinfo.xml updateinfo.xml
+        modifyrepo /repo/OL/ol7_addons/updateinfo.xml /repo/OL/ol7_addons/repodata
+else
+	echo "Could NOT find /repo/OL/ol7_addons"
+	exit 1
+fi
+
