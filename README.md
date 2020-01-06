@@ -1,1 +1,1 @@
-# ems-ol7-repo-sync
+# ol7-repo-sync

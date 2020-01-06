@@ -1,9 +1,8 @@
-Name:    ems-ol7-repo-sync
-Summary: Oracle Linux 7 EMS repo and sync
+Name:    ol7-repo-sync
+Summary: Oracle Linux 7 repo and sync
 Version: 1.0
 Release: 19
-License: Southern Company, EMS
-Vendor:  Southern Company, EMS
+License: GPLv2+
 
 Source0: public-yum-ol7.repo
 Source1: ol7-repo-sync.cron
@@ -19,7 +18,7 @@ AutoReqProv: no
 
 
 %description 
-Oracle Linux 7 EMS repo and sync
+Oracle Linux 7 repo and sync
 
 
 %install 
